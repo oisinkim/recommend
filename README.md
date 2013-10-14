@@ -1,7 +1,7 @@
 recommend
 =========
 
-A simple packaging of Dropwizard, Groovy, Gradle, Guice, Mahout and Swagger to provide a REST recommendation REST API
+A simple packaging of [Dropwizard](http://dropwizard.codahale.com/), [Groovy](http://groovy.codehaus.org/), [Gradle](http://www.gradle.org/), [Guice](https://code.google.com/p/google-guice/), [Mahout](http://mahout.apache.org/) and [Swagger](https://developers.helloreverb.com/swagger/) to provide a [REST](http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm) recommendation API
 
 Instructions:
 
