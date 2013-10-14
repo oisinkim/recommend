@@ -1,0 +1,29 @@
+
+input_file: "dropwizard/src/main/resources/input.csv"
+
+num_recommendations: 4
+
+n_user_neighbourhood: 5
+
+#Set the classname for your recommender, it must be one that has a single parameter which is a DataModel instance.
+#recommender_type: "org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity"
+recommender_type: "org.apache.mahout.cf.taste.impl.similarity.SpearmanCorrelationSimilarity"
+
+logging:
+  level: INFO
+
+  loggers:
+     "ie.smarter": INFO
+
+  console:
+    enabled: true
+    threshold: ALL
+    logFormat: "[%date{ISO8601}][%-5level][%thread][%logger{10}] %msg%n%xException{full}"
+
+  file:
+    enabled: true
+    threshold: ALL
+    currentLogFilename: /tmp/linkr-api-server.log
+    archivedLogFilenamePattern: /tmp/linkr-api-server-%d.log.gz
+    archivedFileCount: 14
+    logFormat: "[%date{ISO8601}][%-5level][%thread][%logger{10}] %msg%n%xException{full}"

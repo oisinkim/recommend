@@ -1,0 +1,7 @@
+  ____                                                   _
+ |  _ \ ___  ___ ___  _ __ ___  _ __ ___   ___ _ __   __| |
+ | |_) / _ \/ __/ _ \| '_ ` _ \| '_ ` _ \ / _ \ '_ \ / _` |
+ |  _ <  __/ (_| (_) | | | | | | | | | | |  __/ | | | (_| |
+ |_| \_\___|\___\___/|_| |_| |_|_| |_| |_|\___|_| |_|\__,_|
+
+ "A simple packaging of Dropwizard, Groovy, Gradle, Guice, Mahout and Swagger to provide a simple recommendation REST API."

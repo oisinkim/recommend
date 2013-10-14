@@ -1,6 +1,13 @@
 *.class
 
 # Package Files #
-*.jar
+# needs to be left in for gradle wrapper *.jar
 *.war
 *.ear
+
+out
+.gradle
+*.iml
+*.ipr
+*.iws
+**/build/*

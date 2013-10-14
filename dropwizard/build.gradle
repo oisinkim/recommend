@@ -1,0 +1,52 @@
+import org.gradle.api.plugins.shadow.transformers.ManifestResourceTransformer
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name 'Gradle Shadow'
+            url 'http://dl.bintray.com/content/johnrengelman/gradle-plugins'
+        }
+    }
+    dependencies {
+        classpath 'org.gradle.plugins:shadow:0.7.4'
+    }
+}
+
+def mahoutVersion = '0.8'
+
+repositories {
+}
+
+apply plugin: 'groovy'
+apply plugin: 'shadow'
+
+configurations {
+    compile.exclude module: 'slf4j-log4j12'
+}
+
+dependencies {
+    compile 'com.yammer.dropwizard:dropwizard-core:0.6.2'
+    compile 'com.yammer.dropwizard:dropwizard-testing:0.6.2'
+    compile 'com.sun.jersey:jersey-client:1.17.1'
+    compile 'com.google.inject:guice:3.0'
+    compile  'org.codehaus.groovy:groovy-all:2.1.6'
+    compile 'com.wordnik:swagger-jaxrs_2.10:1.3.0'
+    compile("org.apache.mahout:mahout-core:${mahoutVersion}") {
+        exclude module: 'jfreechart'
+    }
+    testCompile 'junit:junit-dep:4.10'
+
+}
+
+shadow {
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    exclude 'META-INF/*.txt'
+    transformer(ManifestResourceTransformer) {
+        attributes 'Main-Class': 'ie.smarter.recommend.service.ServiceMain'
+    }
+    artifactSet {
+        exclude 'org.slf4j:slf4j-log4j12'
+    }
+}
